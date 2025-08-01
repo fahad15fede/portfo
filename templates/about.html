@@ -1,1 +1,56 @@
-<p>This is about me</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Fahad</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='logo.ico') }}" type="image/x-icon">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.ico') }}" alt="Logo" class="logo-img">
+            <h2>Fahad</h2>
+        </div>
+        <h2>CoreXtra</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about" class="active">About</a></li>
+            <li><a href="projects">Projects</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <button id="toggle-theme">Dark mode 🌙</button>
+    </nav>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section">
+        <h1>About Me</h1>
+        <p>
+            Hi! I’m <strong>Fahad</strong>, a passionate and curious developer 
+            who loves turning ideas into real-world applications.
+        </p>
+        <p>
+            I started my journey exploring <strong>full-stack development</strong> 
+            with <strong>Python, Flask, and JavaScript</strong>, and along the way, 
+            I’ve built projects like a <strong>Type Master typing trainer</strong>, 
+            a <strong>full-featured Bookshop Management System in C++</strong>, 
+            and even an <strong>8086 Assembly Time Zone Converter</strong>.
+        </p>
+        <p>
+            Currently, I’m diving into <strong>Python web development</strong>, 
+            <strong>data handling with SQLite</strong>, and exploring 
+            <strong>web scraping</strong> to create practical and efficient solutions.  
+            My ultimate goal is to become a <strong>versatile full-stack developer</strong> 
+            capable of building impactful software from scratch.
+        </p>
+        <p>
+            Beyond coding, I enjoy challenging myself to learn new technologies, 
+            experiment with creative projects, and grow as a problem solver every day.
+        </p>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
