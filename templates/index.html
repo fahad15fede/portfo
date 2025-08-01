@@ -5,46 +5,40 @@
     <title>Fahad's Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='logo.ico') }}" type="image/x-icon">
-
 </head>
 <body>
 
     <!-- NAVBAR -->
     <nav>
-    <div class="logo">
-        <img src="{{ url_for('static', filename='logo.ico') }}" alt="Logo" class="logo-img">
-        <h2>Fahad</h2>
-    </div>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.ico') }}" alt="Logo" class="logo-img">
+            <h2>Fahad</h2>
+        </div>
         <h2>CoreXtra</h2>
         <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/projects">Projects</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
-        <button id = 'toggle-theme' >Dark mode🌙</button>
+        <button id="toggle-theme">Dark mode 🌙</button>
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="hero">
-        <h1>Hi, I'm Fahad</h1>
-        <p>A passionate developer exploring full-stack development.</p>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I’m currently learning backend development with Flask, and building cool projects like this portfolio.</p>
-    </section>
-
-    <!-- PROJECTS SECTION -->
-    <section id="projects">
-        <h2>My Projects</h2>
-        <p>Coming soon...</p>
+    <section id="hero" class="hero-section">
+        <div class="hero-text">
+            <h1>Hi, I’m <span>Fahad</span></h1>
+            <p>A passionate developer exploring full-stack development and building real-world projects.</p>
+            <div class="hero-buttons">
+                <a href="/about" class="btn">Learn More About Me</a>
+                <a href="/projects" class="btn btn-secondary">View My Projects</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='deploy.png') }}" alt="Fahad" class="profile-img">
+        </div>
     </section>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-
-
 </body>
 </html>
