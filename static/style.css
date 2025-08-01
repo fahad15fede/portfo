@@ -1,53 +1,100 @@
+/* RESET */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* BODY */
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f9f9f9;
     color: #222;
     line-height: 1.6;
-    padding: 0;
 }
 
+/* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #007bff;
     color: #fff;
-    padding: 10px 25px 10px 18px;  /* top, right, bottom, left */
-
+    padding: 15px 40px;  /* More breathing space */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Soft shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-
 nav h2 {
-    font-size: 37px
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
-    font-size: 20px;
+    gap: 25px;
+    font-size: 18px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+nav a:hover {
+    color: #ffd700; /* Nice hover color */
+}
+
+/* THEME TOGGLE */
+#toggle-theme {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 1rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#toggle-theme:hover {
+    background-color: #fff;
+    color: #007bff;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 56px;
+    width: 56px;
+    object-fit: contain;
+}
+
+/* SECTION SPACING */
 section {
-    margin: 60px 0;
+    margin: 80px auto;
+    padding: 0 30px; /* Add left/right padding */
+    max-width: 1100px; /* Keep content centered */
+    text-align: justify;
 }
 
 section h2 {
     color: #007bff;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 28px;
 }
-/* Dark mode */
+
+/* DARK MODE */
 body.dark {
     background-color: #121212;
     color: #e0e0e0;
@@ -64,32 +111,7 @@ body.dark section h2 {
 body.dark a {
     color: #90caf9;
 }
-#toggle-theme {
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    font-size: 1.2rem;
-    padding: 6px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
 
-#toggle-theme:hover {
-    background-color: #fff;
-    color: #007bff;
-}
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-img {
-    height: 64px;
-    width: 64px;
-    object-fit: contain;
-}
 /* Contact Form Styling */
 #contact {
     padding: 40px 20px;
@@ -151,4 +173,168 @@ body.dark #contact-form button {
 .response {
     margin-top: 15px;
     font-weight: bold;
+}
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;                     /* More gap between cards */
+    padding: 40px 20px;            /* Add padding around the container */
+    max-width: 1200px;             /* Wider container for large screens */
+    margin: 0 auto;                /* Center the grid horizontally */
+}
+
+#projects {
+    margin-top: 60px;              /* Space below navbar */
+    padding: 0 20px;               /* Space from left/right edges */
+    text-align: justify;
+}
+
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.project-card h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode project cards */
+body.dark .project-card {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+body.dark .project-card h3 {
+    color: #90caf9;
+}
+/* ABOUT PAGE */
+.about-section {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.about-section h1 {
+    color: #007bff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Dark Mode for About Page */
+body.dark .about-section p {
+    color: #ddd;
+}
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 10%;
+    max-width: 1300px;
+    margin: auto;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #007bff;
+}
+
+.hero-text h1 span {
+    color: #222;
+}
+
+.hero-text p {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #444;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #444;
+}
+
+.btn-secondary:hover {
+    background-color: #222;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #007bff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Dark mode adjustments */
+body.dark .hero-text h1 {
+    color: #90caf9;
+}
+
+body.dark .hero-text h1 span {
+    color: #fff;
+}
+
+body.dark .hero-text p {
+    color: #ddd;
+}
+
+body.dark .profile-img {
+    border-color: #90caf9;
 }
